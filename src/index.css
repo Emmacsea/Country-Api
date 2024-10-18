@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.inp {
+    @apply text-neutral-vlightgray text-sm outline-none border-0 font-medium bg-transparent
+}
+
+.inp::placeholder {
+    @apply text-neutral-vlightgray text-sm font-light
+}
+
+.disp {
+    @apply grid grid-cols-5 gap-x-4 gap-y-7
+}
+
+.countrydisp {
+    @apply bg-neutral-darkblue rounded-md w-52
+}
+
+.detail {
+    @apply text-neutral-white text-sm font-light
+}
+
+.det {
+    @apply text-neutral-vlightgray text-sm font-medium
+}
+
+
+/* Selected Country CSS */
+
+.selectdetail {
+    @apply text-neutral-white text-base font-medium
+}
+
+.selectdet {
+    @apply text-neutral-vlightgray text-base font-light
+}
