@@ -1,3 +1,4 @@
+import style from "./Country.module.css";
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { FaSearch, FaMoon, FaArrowLeft } from "react-icons/fa";
@@ -39,24 +40,42 @@ export default function CountryApi({ country }) {
               </button>
 
               <section className="w-full mt-14">
-                <div className="flex space-x-40 items-center">
-                  <div><img className="w-96 h-72" src={selectedCountry.flags.svg} alt="" /></div>
+                <div className="flex space-x-28 items-center">
+                  <div><img className="w-96 h-80" src={selectedCountry.flags.svg} alt="" /></div>
                   <div>
                     <h3 className="text-neutral-white text-lg font-bold mb-5">{selectedCountry.name}</h3>
-                    <div className="flex space-x-10 items-center">
-                      <div className="flex flex-col space-y-3 ">
+                    <div className="flex space-x-14 items-start mb-9">
+                      <div className="flex flex-col space-y-1 ">
                       <p className="selectdetail">Native Name: <span className="selectdet">{selectedCountry.nativeName}</span></p>
                       <p className="selectdetail">Population: <span className="selectdet">{selectedCountry.population}</span></p>
                       <p className="selectdetail">Region: <span className="selectdet">{selectedCountry.region}</span></p>
-                      <p className="selectdetail">Sub Region: <span className="selectdet">{selectedCountry.subregion || "N/A"}</span></p>
-                      <p className="selectdetail">Capital: <span className="selectdet">{selectedCountry.capital || "N/A"}</span></p>
-                    </div>
-                      <div className="flex flex-col space-y-3 ">
-                      <p className="selectdetail">Top Level Domain: <span className="selectdet">{selectedCountry.topLevelDomain || "N/A"}</span></p>
-                      <p className="selectdetail">Currencies: <span className="selectdet">{selectedCountry.currencies || "N/A"}</span></p>
-                      <p className="selectdetail">Languages: <span className="selectdet">{selectedCountry.languages || "N/A" }</span></p>                      
+                      <p className="selectdetail">Sub Region: <span className="selectdet">{selectedCountry.subregion || "N/A" }</span></p>
+                      <p className="selectdetail">Capital: <span className="selectdet">{selectedCountry.capital || "N/A" }</span></p>
+                      </div>
+                    
+                      <div className="flex flex-col space-y-1 ">
+                      <p className="selectdetail">Top Level Domain: <span className="selectdet">{selectedCountry.topLevelDomain }</span></p>
+                      <p className="selectdetail">Currencies: <span className="selectdet">{selectedCountry.currencies.map((currency) => currency.name).join(",") || "N/A" }</span></p>
+                      <p className="selectdetail">Languages: <span className="selectdet">{selectedCountry.languages.map((lang) => lang.name).join(",") || "N/A" }</span></p>                      
+                      </div>
+
                     </div>
 
+                    <div className="flex space-x-5 justify-start items-start">
+                      <p className="selectdetail">
+                        Border Countries:
+                      </p>
+                      <div className="flex space-x-3" >
+                        {selectedCountry.borders && selectedCountry.borders.length > 0 ? (
+                          selectedCountry.borders.map((border, index) => (
+                            <button key={index} className="border-btn" type="button">
+                              {border}
+                            </button>
+                          ))
+                        ) : (
+                          <p className="selectdet">No Borders Available</p>
+                        )}
+                      </div>
                     </div>
 
                   </div>
@@ -66,7 +85,7 @@ export default function CountryApi({ country }) {
           </div>
         </div>
       ) : (
-        <div className=" bg-neutral-vdarkbluebg h-full w-full">
+        <div className={` bg-neutral-vdarkbluebg h-full w-full hide-scrollbar overflow-auto ${style.strollbar}`}>
           <div className="flex flex-col justify-center items-center w-full">
             <header className="px-12 py-5 flex justify-between items-center w-full bg-neutral-darkblue">
               <h2 className="text-neutral-white text-lg font-semibold ">
@@ -94,7 +113,7 @@ export default function CountryApi({ country }) {
                 <div
                   key={count.name}
                   onClick={() => handleCountry(count)}
-                  className="countrydisp "
+                  className="countrydisp cursor-pointer"
                 >
                   <div>
                     <img className="w-full rounded-t-md" src={count.flags.svg} alt="" />

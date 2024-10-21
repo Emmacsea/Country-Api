@@ -19,20 +19,25 @@
 }
 
 .detail {
-    @apply text-neutral-white text-sm font-light
+    @apply text-neutral-white text-sm font-semibold
 }
 
 .det {
-    @apply text-neutral-vlightgray text-sm font-medium
+    @apply text-neutral-vlightgray text-sm font-light
 }
 
 
 /* Selected Country CSS */
 
 .selectdetail {
-    @apply text-neutral-white text-base font-medium
+    @apply text-neutral-white text-base font-semibold
 }
 
 .selectdet {
     @apply text-neutral-vlightgray text-base font-light
 }
+
+.border-btn {
+    @apply bg-neutral-darkblue text-neutral-vlightgray text-sm font-medium rounded-md py-1 px-6 text-center 
+}
+
