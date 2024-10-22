@@ -43,7 +43,7 @@ export default function CountryApi({ country }) {
                 <div className="flex space-x-28 items-center">
                   <div><img className="w-96 h-80" src={selectedCountry.flags.svg} alt="" /></div>
                   <div>
-                    <h3 className="text-neutral-white text-lg font-bold mb-5">{selectedCountry.name}</h3>
+                    <h3 className="text-neutral-white text-3xl font-bold mb-5">{selectedCountry.name}</h3>
                     <div className="flex space-x-14 items-start mb-9">
                       <div className="flex flex-col space-y-1 ">
                       <p className="selectdetail">Native Name: <span className="selectdet">{selectedCountry.nativeName}</span></p>
