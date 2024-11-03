@@ -3,41 +3,41 @@
 @tailwind utilities;
 
 .inp {
-    @apply text-neutral-vlightgray text-sm outline-none border-0 font-medium bg-transparent
+    @apply  text-sm outline-none border-0 font-medium bg-transparent
 }
 
 .inp::placeholder {
-    @apply text-neutral-vlightgray text-sm font-light
+    @apply  text-sm font-light
 }
 
 .disp {
-    @apply grid grid-cols-5 gap-x-4 gap-y-7
+    @apply grid md:grid-cols-5 md:gap-x-4 gap-y-7 sm:place-self-center 
 }
 
 .countrydisp {
-    @apply bg-neutral-darkblue rounded-md w-52
+    @apply  rounded-md md:w-52 sm:w-60
 }
 
 .detail {
-    @apply text-neutral-white text-sm font-semibold
+    @apply  sm:text-xs md:text-sm font-semibold
 }
 
 .det {
-    @apply text-neutral-vlightgray text-sm font-light
+    @apply  sm:text-xs md:text-sm font-light
 }
 
 
 /* Selected Country CSS */
 
 .selectdetail {
-    @apply text-neutral-white text-base font-semibold
+    @apply  text-base font-semibold
 }
 
 .selectdet {
-    @apply text-neutral-vlightgray text-base font-light
+    @apply  text-base font-light
 }
 
 .border-btn {
-    @apply bg-neutral-darkblue text-neutral-vlightgray text-sm font-medium rounded-md py-1 px-6 text-center 
+    @apply text-sm font-medium rounded-md py-1 px-6 text-center shadow-md
 }
 
