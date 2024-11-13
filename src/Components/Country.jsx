@@ -83,7 +83,7 @@ export default function CountryApi({ country }) {
               </button>
 
               <section className="w-full mt-14 md:mb-0 sm:mb-10">
-                <div className="flex md:flex-row sm:flex-col md:space-x-28 sm:space-y-8 md:items-center sm:items-start">
+                <div className="flex md:flex-row sm:flex-col md:space-x-28 sm:space-y-8 md:items-start justify-start sm:items-start">
                   <div>
                     <img
                       className="w-96 h-80"
@@ -101,7 +101,7 @@ export default function CountryApi({ country }) {
                     >
                       {selectedCountry.name}
                     </h3>
-                    <div className="flex md:flex-row sm:flex-col md:space-x-14 sm:space-y-7 items-start mb-9">
+                    <div className="flex md:flex-row sm:flex-col md:space-x-16 sm:space-y-10 md:items-start mb-9">
                       <div className="flex flex-col space-y-1 ">
                         <p
                           className={`selectdetail ${
@@ -257,7 +257,7 @@ export default function CountryApi({ country }) {
                       </div>
                     </div>
 
-                    <div className="flex md:flex-row sm:flex-col md:space-x-5 sm:space-y-3 justify-start items-start">
+                    <div className="flex md:flex-row sm:flex-col md:space-x-5 sm:space-y-3 justify-center sm:items-start md:items-center">
                       <p
                         className={`selectdetail ${
                           selectMode
